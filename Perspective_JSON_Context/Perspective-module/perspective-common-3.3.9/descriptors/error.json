@@ -1,0 +1,53 @@
+{
+    "name": "Result.Error",
+    "methods": [
+        {
+            "name": "isGeneric",
+            "location": "Result.Error",
+            "description": "True if this is not some more specific type of error.",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "bool",
+            "parameters": []
+        },
+        {
+            "name": "isTimeout",
+            "location": "Result.Error",
+            "description": "True if this is was a timeout error.",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "bool",
+            "parameters": []
+        },
+        {
+            "name": "isCancelled",
+            "location": "Result.Error",
+            "description": "True if this request was cancelled by the user.",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "bool",
+            "parameters": []
+        }
+    ],
+    "attributes": [
+        {
+            "name": "generic",
+            "location": "Result.Error",
+            "description": "True if this is not some more specific type of error.",
+            "kind": "INSTANCE_MEMBER",
+            "type": "bool"
+        },
+        {
+            "name": "timeout",
+            "location": "Result.Error",
+            "description": "True if this is was a timeout error.",
+            "kind": "INSTANCE_MEMBER",
+            "type": "bool"
+        },
+        {
+            "name": "cancelled",
+            "location": "Result.Error",
+            "description": "True if this request was cancelled by the user.",
+            "kind": "INSTANCE_MEMBER",
+            "type": "bool"
+        }
+    ],
+    "items": []
+}

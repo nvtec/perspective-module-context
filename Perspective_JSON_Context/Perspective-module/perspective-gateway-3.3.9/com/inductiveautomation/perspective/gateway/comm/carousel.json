@@ -1,0 +1,121 @@
+{
+    "views": {
+        "carousel": {
+            "root": {
+                "version": 0,
+                "type": "ia.container.coord",
+                "props": {
+                    "style": {}
+                },
+                "meta": {
+                    "name": "carouselContainer"
+                },
+                "children": [
+                    {
+                        "version": 0,
+                        "type": "ia.display.carousel",
+                        "props": {
+                            "dots": true,
+                            "infinite": true,
+                            "views": [
+                                {
+                                    "viewPath": "view1",
+                                    "params": {}
+                                },
+                                {
+                                    "viewPath": "view2",
+                                    "params": {}
+                                }
+                            ]
+                        },
+                        "meta": {
+                            "name": "sampleCarousel"
+                        },
+                        "position": {
+                            "x": 100,
+                            "y": 100
+                        }
+                    }
+                ]
+            }
+        },
+        "view1": {
+            "root": {
+                "version": 0,
+                "type": "ia.container.coord",
+                "props": {
+                    "style": {}
+                },
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "width":"150",
+                    "height": "150"
+                },
+                "meta": {
+                    "name": "carouselContainer"
+                },
+                "children": [
+                    {
+                        "version": 0,
+                        "type": "ia.display.label",
+                        "props": {
+                            "text": "Label 1"
+                        },
+                        "meta": {
+                            "name": "labe1_1"
+                        },
+                        "position": {
+                            "x": 10,
+                            "y": 5,
+                            "width": 80,
+                            "height": 40
+                        }
+                    }
+                ]
+            }
+        },
+        "view2": {
+            "root": {
+                "version": 0,
+                "type": "ia.container.coord",
+                "props": {
+                },
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "width":"150",
+                    "height": "150"
+                },
+                "meta": {
+                    "name": "view2Container"
+                },
+                "children": [
+                    {
+                        "version": 0,
+                        "type": "ia.display.label",
+                        "props": {
+                            "text": "View 2 Label"
+                        },
+                        "meta": {
+                            "name": "labe1_2"
+                        },
+                        "position": {
+                            "x": 70,
+                            "y": 25,
+                            "width": 80,
+                            "height": 40
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "mounts": {
+        "/": {
+            "view": "carousel",
+            "docks": []
+        }
+    },
+    "docks": {}
+}

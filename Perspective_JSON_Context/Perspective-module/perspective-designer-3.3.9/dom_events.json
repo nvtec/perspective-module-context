@@ -1,0 +1,314 @@
+{
+  "comment": "https://repl.it/repls/ScaryUnwrittenBotany",
+  "categories": [
+    {
+      "name": "Mouse Events",
+      "documentationUrl": "https://links.inductiveautomation.com/83-mouse-events",
+      "events": [
+        "onClick",
+        "onContextMenu",
+        "onDoubleClick",
+        "onMouseDown",
+        "onMouseEnter",
+        "onMouseLeave",
+        "onMouseMove",
+        "onMouseOut",
+        "onMouseOver",
+        "onMouseUp"
+      ],
+      "eventObjectSchema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "title": "MouseEvent",
+        "description": "Events fired by the relevant mouse/touch interaction.",
+        "properties": {
+          "altKey": {
+            "type": "boolean",
+            "description": "True if the 'alt' key was held down when the event was fired."
+          },
+          "button": {
+            "type": "number",
+            "description": "The button number that was pressed when the event was fired."
+          },
+          "buttons": {
+            "type": "number",
+            "description": "The buttons being depressed when the event was fired."
+          },
+          "clientX": {
+            "type": "number",
+            "description": "The X coordinate in local coordinates."
+          },
+          "clientY": {
+            "type": "number",
+            "description": "The Y coordinate in local coordinates."
+          },
+          "ctrlKey": {
+            "type": "boolean",
+            "description": "True if the 'ctrl' key was held down when the event was fired."
+          },
+          "metaKey": {
+            "type": "boolean",
+            "description": "True if the 'meta' key was held down when the event was fired."
+          },
+          "pageX": {
+            "type": "number",
+            "description": "The X coordinate relative to the whole document."
+          },
+          "pageY": {
+            "type": "number",
+            "description": "The Y coordinate relative to the whole document."
+          },
+          "screenX": {
+            "type": "number",
+            "description": "The X coordinate in global (screen) coordinates."
+          },
+          "screenY": {
+            "type": "number",
+            "description": "The Y coordinate in global (screen) coordinates."
+          },
+          "shiftKey": {
+            "type": "boolean",
+            "description": "True if the 'shift' key was held down when the event was fired."
+          }
+        }
+      }
+    },
+    {
+      "name": "Pointer Events",
+      "documentationUrl": "https://links.inductiveautomation.com/83-pointer-events",
+      "events": [
+        "onPointerCancel",
+        "onPointerDown",
+        "onPointerEnter",
+        "onPointerLeave",
+        "onPointerMove",
+        "onPointerOut",
+        "onPointerOver",
+        "onPointerUp"
+      ],
+      "eventObjectSchema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "description": "Events fired by the relevant pointer interaction",
+        "properties": {
+          "pointerId": {
+            "type": "number",
+            "description": "A unique identifier for the pointer causing the event."
+          },
+          "width": {
+            "type": "number",
+            "description": "The width (magnitude on the X axis), in CSS pixels, of the contact geometry of the pointer."
+          },
+          "height": {
+            "type": "number",
+            "description": "The height (magnitude on the Y axis), in CSS pixels, of the contact geometry of the pointer."
+          },
+          "pressure": {
+            "type": "number",
+            "description": "The normalized pressure of the pointer input in the range of 0 to 1, where 0 and 1 represent the minimum and maximum pressure the hardware is capable of detecting, respectively."
+          },
+          "tangentialPressure": {
+            "type": "number",
+            "description": "The normalized tangential pressure of the pointer input (also known as barrel pressure or cylinder stress) in the range -1 to 1, where 0 is the neutral position of the control."
+          },
+          "tiltX": {
+            "type": "number",
+            "description": "The plane angle (in degrees, in the range of -90 to 90) between the Y-Z plane and the plane container both the pointer (e.g. pen stylus) axis and the Y axis."
+          },
+          "tiltY": {
+            "type": "number",
+            "description": "The plane angle (in degrees, in the range of -90 to 90) between the X-Z plane and the plane containing both the pointer (e.g. pen stylus) axis and the X axis."
+          },
+          "twist": {
+            "type": "number",
+            "description": "The clockwise rotation of the pointer (e.g. pen stylus) around its major axis in degrees, with a value in the range 0 to 359."
+          },
+          "pointerType": {
+            "type": "string",
+            "description": "Indicates the device type that caused the event (mouse, pen, touch, etc)."
+          },
+          "isPrimary": {
+            "type": "boolean",
+            "description": "Indicates if the pointer represents the primary pointer of this pointer type."
+          }
+        }
+      }
+    },
+    {
+      "name": "Keyboard Events",
+      "documentationUrl": "https://links.inductiveautomation.com/83-keyboard-events",
+      "events": [
+        "onKeyDown",
+        "onKeyPress",
+        "onKeyUp"
+      ],
+      "eventObjectSchema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "title": "KeyEvent",
+        "description": "Events fired by the relevant keyboard interaction.",
+        "properties": {
+          "altKey": {
+            "type": "boolean",
+            "description": "True if the 'alt' key was held down when the event was fired."
+          },
+          "charCode": {
+            "type": "number",
+            "description": "Deprecated."
+          },
+          "ctrlKey": {
+            "type": "boolean",
+            "description": "True if the 'ctrl' key was held down when the event was fired."
+          },
+          "key": {
+            "type": "string",
+            "description": "The value of the key interacted with in this event."
+          },
+          "keyCode": {
+            "type": "number",
+            "description": "Deprecated."
+          },
+          "locale": {
+            "type": "string",
+            "description": "The locale of the keyboard in use on the device. May be blank."
+          },
+          "location": {
+            "type": "number",
+            "description": "The location of the key interacted with on the keyboard."
+          },
+          "metaKey": {
+            "type": "boolean",
+            "description": "True if the 'meta' key was held down when the event was fired."
+          },
+          "repeat": {
+            "type": "boolean",
+            "description": "True if the key is being held down such that it automatically repeats."
+          },
+          "shiftKey": {
+            "type": "boolean",
+            "description": "True if the 'shift' key was held down when the event was fired."
+          },
+          "which": {
+            "type": "number",
+            "description": "Deprecated."
+          }
+        }
+      }
+    },
+    {
+      "name": "Text Composition Events",
+      "documentationUrl": "https://links.inductiveautomation.com/83-text-composition-events",
+      "events": [
+        "onCompositionEnd",
+        "onCompositionStart",
+        "onCompositionUpdate"
+      ],
+      "eventObjectSchema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "title": "CompositionEvent",
+        "description": "Events that occur due to the user indirectly entering text.",
+        "properties": {
+          "data": {
+            "type": "string",
+            "description": "The characters generated by the composition event."
+          }
+        }
+      }
+    },
+    {
+      "name": "Focus Events",
+      "documentationUrl": "https://links.inductiveautomation.com/83-focus-events",
+      "events": [
+        "onFocus",
+        "onBlur"
+      ],
+      "eventObjectSchema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "title": "FocusEvent",
+        "description": "Events fired upon focus changes.",
+        "properties": {}
+      }
+    },
+    {
+      "name": "Selection Events",
+      "documentationUrl": "https://links.inductiveautomation.com/83-selection-events",
+      "events": [
+        "onSelect"
+      ],
+      "eventObjectSchema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "title": "SelectionEvent",
+        "description": "Event fired upon selection changes.",
+        "properties": {}
+      }
+    },
+    {
+      "name": "Touch Events",
+      "documentationUrl": "https://links.inductiveautomation.com/83-touch-events",
+      "events": [
+        "onTouchCancel",
+        "onTouchEnd",
+        "onTouchMove",
+        "onTouchStart"
+      ],
+      "eventObjectSchema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "title": "TouchEvent",
+        "description": "Events fired upon relevant touch actions.",
+        "properties": {
+          "altKey": {
+            "type": "boolean",
+            "description": "True if the 'alt' key was held down when the event was fired."
+          },
+          "ctrlKey": {
+            "type": "boolean",
+            "description": "True if the 'ctrl' key was held down when the event was fired."
+          },
+          "metaKey": {
+            "type": "boolean",
+            "description": "True if the 'meta' key was held down when the event was fired."
+          },
+          "shiftKey": {
+            "type": "boolean",
+            "description": "True if the 'shift' key was held down when the event was fired."
+          }
+        }
+      }
+    },
+    {
+      "name": "Wheel Events",
+      "documentationUrl": "https://links.inductiveautomation.com/83-wheel-events",
+      "events": [
+        "onWheel"
+      ],
+      "eventObjectSchema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "title": "WheelEvent",
+        "description": "Event fired upon mouse wheel interaction.",
+        "properties": {
+          "deltaMode": {
+            "type": "integer",
+            "description": "0 (pixels), 1 (lines), or 2 (pages) to represent the units of the delta* values."
+          },
+          "deltaX": {
+            "type": "number",
+            "description": "The horizontal scroll amount."
+          },
+          "deltaY": {
+            "type": "number",
+            "description": "The vertical scroll amount."
+          },
+          "deltaZ": {
+            "type": "number",
+            "description": "The scroll amount on the z-axis."
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "struct": {
+      "type": "object",
+      "description": "The structure whose string values (or children's string values) will be interpreted as expression sources"
+    },
+    "waitOnAll": {
+      "type": "boolean",
+      "description": "If set to true, the binding will not emit a value until all expressions in the structure have emitted at least one value. This value is true by default."
+    }
+  },
+  "required": [
+    "struct"
+  ],
+  "default": {
+    "struct": {},
+    "waitOnAll": true
+  },
+  "additionalProperties": false
+}

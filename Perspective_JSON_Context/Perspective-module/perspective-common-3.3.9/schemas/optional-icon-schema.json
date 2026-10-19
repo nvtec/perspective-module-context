@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Optional Icon Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "path": {
+      "type": "string",
+      "format": "icon-path",
+      "description": "Path to icon source, in format: library/iconName",
+      "default": "material/link"
+    },
+    "color": {
+      "type": "string",
+      "format": "color",
+      "description": "Color of the icon. Here for convenience, may instead assign 'fill' in the styles prop.",
+      "default": "#6C6C6C"
+    }
+  }
+}

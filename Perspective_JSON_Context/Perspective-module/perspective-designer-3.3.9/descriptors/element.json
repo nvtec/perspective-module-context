@@ -1,0 +1,42 @@
+{
+    "name": "Element",
+    "methods": [],
+    "attributes": [
+        {
+            "name": "name",
+            "location": "Element",
+            "description": "The name of the element",
+            "kind": "INSTANCE_MEMBER",
+            "type": "str"
+        },
+        {
+            "name": "qualifiedPath",
+            "location": "Element",
+            "description": "The qualified name of the element",
+            "kind": "INSTANCE_MEMBER",
+            "type": "str"
+        },
+        {
+            "name": "view",
+            "location": "Element",
+            "description": "The view within which this element exists, or <tt>null</tt> if this is a Page or Session.",
+            "kind": "INSTANCE_MEMBER",
+            "type": "View"
+        },
+        {
+            "name": "page",
+            "location": "Element",
+            "description": "The Page that this element is part of. Will return <tt>null</tt> if this is the Session.",
+            "kind": "INSTANCE_MEMBER",
+            "type": "Page"
+        },
+        {
+            "name": "session",
+            "location": "Element",
+            "description": "The session that this element is a part of.",
+            "kind": "INSTANCE_MEMBER",
+            "type": "Session"
+        }
+    ],
+    "items": []
+}

@@ -1,0 +1,101 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.view-repeater",
+            "props": {
+              "path": "only-view",
+              "instances": [
+                {
+                  "p1": "Template numero uno"
+                },
+                {
+                  "p1": "Template numero dos"
+                },
+                {
+                  "p1": "Template numero tres"
+                },
+                {
+                  "p1": "Template numero cuatro"
+                },
+                {
+                  "p1": "Template numero cinco"
+                },
+                {
+                  "p1": "Template numero seis"
+                },
+                {
+                  "p1": "Template numero siete"
+                }
+              ],
+              "viewHeight": 100,
+              "viewWidth": 140,
+              "layoutStyle": "vertical",
+              "flowDirection": "horizontal",
+              "style": {
+                "border": "1px solid blue"
+              }
+            },
+            "meta": {
+              "name": "viewR"
+            },
+            "position": {
+              "x": 100,
+              "y": 100,
+              "width": 460,
+              "height": 500
+            }
+          }
+        ]
+      }
+    },
+    "only-view": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {
+            "border": "1px dashed black"
+          }
+        },
+        "meta": {
+          "name": "container"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.label",
+            "props": {
+              "text": "IT'S A VIEW"
+            },
+            "meta": {
+              "name": "templateLabel"
+            },
+            "position": {
+              "x": 10,
+              "y": 10
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

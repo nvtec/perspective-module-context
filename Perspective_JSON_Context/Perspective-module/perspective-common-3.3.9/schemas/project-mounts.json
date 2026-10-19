@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Perspective Project Mounts",
+  "definitions": {
+    "mounts": {
+      "type": "object",
+      "patternProperties": {
+        "^\/[^.]*$": {
+          "type": "string",
+          "properties": {
+            "view": {
+              "type": "string",
+              "default": "View",
+              "description": "Path to view that should be displayed as the root of the page when navigated to current mount"
+            },
+            "docks": {
+              "$ref": "#/definitions/docks"
+            }
+          },
+          "required": ["view"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "docks": {
+      "type": "object",
+      "properties": {
+        "cornerPriority": {
+          "type": "string",
+          "enum": ["left-right", "top-bottom"],
+          "default": "left-right",
+          "description": "If docks are competing for a corner, which one should expand to full dimensions?"
+        },
+        "showHandleDuration": {
+          "type": "number",
+          "minimum": 0,
+          "default": 5000,
+          "description": "Time (in ms) a toggle handle is shown before hiding if dock 'handleHideConfig' is set to 'inactive'."
+        },
+        "left": {
+          "$ref": "#/definitions/dockSide"
+        },
+        "top": {
+          "$ref": "#/definitions/dockSide"
+        },
+        "right": {
+          "$ref": "#/definitions/dockSide"
+        },
+        "bottom": {
+          "$ref": "#/definitions/dockSide"
+        }
+      }
+    },
+    "dockSide": {
+      "type": "object",
+      "properties": {
+        "display": {
+          "type": "object",
+          "properties": {
+            "show": {
+              "type": "string",
+              "enum": ["visible", "hidden", "onDemand", "auto"],
+              "default": "onDemand",
+              "description": "Whether dock should be visible. 'onDemand' lets user toggle visiblility, 'auto' determines this by screen width."
+            },
+            "anchor": {
+              "type": "string",
+              "enum": ["fixed", "scrollable"],
+              "default": "fixed",
+              "description": "Fixed dock is anchored to its side regardless of page scroll. Scrollable dock is positioned as part of (and relative to) page content. These will not stay on screen as user scrolls."
+            },
+            "content": {
+              "type": "string",
+              "enum": ["push", "cover"],
+              "default": "cover",
+              "description": "Whether open dock covers some page content or pushes content to make space for both to be simultaneously displayed."
+            }
+          },
+          "additionalProperties": false
+        },
+        "resizable": {
+          "type": "boolean",
+          "default": false,
+          "description": "If dock is resizable, a user can drag to adjust its size while open."
+        },
+        "autoBreakpoint": {
+          "type": "number",
+          "default": 600,
+          "description": "Only applies if display.show is set to 'auto'. When a dock's visibility rules depend on screen width, this value (in pixels) determines the minimum screen width for dock to be visible."
+        },
+        "handleHideConfig": {
+          "type": "string",
+          "enum": ["always", "never", "inactive"],
+          "default": "inactive",
+          "description": "When handles for toggling dock are visible. 'inactive' will show handles when user is active, but hide after inactivity (for a period of time determined by 'showHandleDuration')."
+        },
+        "defaultViewIndex": {
+          "type": "number",
+          "default": 0,
+          "description": "If multiple view options are set on this dock, which view will display by default?"
+        },
+        "views": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "viewPath": {
+                "type": "string",
+                "default": "View",
+                "description": "Path to view to display as root for this dock. Multiple views may be configured for a dock's root, but only one may be displayed at a time."
+              },
+              "viewParams": {
+                "type": "object",
+                "default": {},
+                "description": "Optional parameters to pass to the view."
+              },
+              "size": {
+                "type": "number",
+                "default": 160,
+                "description": "Width or height (in pixels) of dock when visible and displaying this view. Top or bottom docks will use this as height, and left or right docks use as width."
+              },
+              "iconUrl": {
+                "type": "string",
+                "default": "",
+                "description": "Path to an icon which will appear on the dock toggle handle representing this view."
+              },
+              "isModal": {
+                "type": "boolean",
+                "default": false,
+                "description": "Dock is modal when open, and all other screen content is disabled until closing dock."
+              }
+            }
+          }
+        }
+      },
+      "required": ["views"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.date-label",
+            "props": {
+              "date": "2014-04-25T01:32:21.196Z"
+            },
+            "custom": {
+              "test": "cheese"
+            },
+            "meta": {
+              "name": "whatever"
+            },
+            "position": {
+              "x": 200,
+              "y": 200
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

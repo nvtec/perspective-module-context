@@ -1,0 +1,53 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "position": {
+              "x": 100,
+              "y": 100
+            },
+            "type": "ia.input.button",
+            "version": 0,
+            "meta": {
+              "name": "superbuttonc22"
+            },
+            "props": {
+              "text": "button"
+            }
+          },
+          {
+            "version": 0,
+            "type": "ia.input.text-field",
+            "props": {
+              "text": "text is here"
+            },
+            "meta": {
+              "name": "textField"
+            },
+            "position": {
+              "x": 200,
+              "y": 200
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

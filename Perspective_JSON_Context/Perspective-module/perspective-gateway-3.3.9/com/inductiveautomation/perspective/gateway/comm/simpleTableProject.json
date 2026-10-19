@@ -1,0 +1,39 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.simple-table",
+            "props": {},
+            "meta": {
+              "name": "table"
+            },
+            "position": {
+              "x": 100,
+              "y": 100,
+              "width": 400,
+              "height": 300
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

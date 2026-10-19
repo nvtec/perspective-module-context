@@ -1,0 +1,107 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.linear-scale",
+            "props": {
+              "minValue": 0,
+              "maxValue": 100,
+              "margin": 0.1,
+              "border": false,
+              "borderStyle": {
+                "border": "1px solid black"
+              },
+              "mirror": false,
+              "reverse": false,
+              "labelAngle": 0,
+              "labelStyle": {
+                "fontSize": 18,
+                "fontWeight": "lighter"
+              },
+              "majorTickSpan": {
+                "value": 20,
+                "length": 20,
+                "color": "black",
+                "stroke": 1
+              },
+              "minorTickSpan": {
+                "value": 5,
+                "length": 10,
+                "color": "red",
+                "stroke": 1
+              },
+              "fineTickSpan": {
+                "value": 1,
+                "length": 5,
+                "color": "black",
+                "stroke": 1
+              },
+              "indicators": [
+                {
+                  "label": "High",
+                  "labelColor": "black",
+                  "color": "red",
+                  "length": 25,
+                  "stroke": 1.5,
+                  "indicatorStyle": "range",
+                  "labelAngle": 270,
+                  "extent": 10,
+                  "value": 80
+                },
+                {
+                  "label": "Medium",
+                  "labelColor": "red",
+                  "color": "blue",
+                  "length": 25,
+                  "stroke": 0.5,
+                  "indicatorStyle": "wedge",
+                  "labelAngle": 270,
+                  "extent": 5,
+                  "value": 45
+                },
+                {
+                  "label": "Low",
+                  "labelColor": "black",
+                  "color": "green",
+                  "length": 25,
+                  "stroke": 5,
+                  "indicatorStyle": "line",
+                  "labelAngle": 270,
+                  "extent": 25,
+                  "value": 20
+                }
+              ]
+            },
+            "meta": {
+              "name": "scale"
+            },
+            "position": {
+              "x": 200,
+              "y": 200,
+              "width": "100px",
+              "height": "400px"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

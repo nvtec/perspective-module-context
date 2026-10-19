@@ -1,0 +1,45 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.input.slider",
+            "props": {
+              "orientation": "vertical",
+              "step": 1,
+              "style": {
+                "padding": "1rem"
+              }
+            },
+            "meta": {
+              "name": "slider"
+            },
+            "position": {
+              "x": 100,
+              "y": 100,
+              "width": "2rem",
+              "height": "12rem"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

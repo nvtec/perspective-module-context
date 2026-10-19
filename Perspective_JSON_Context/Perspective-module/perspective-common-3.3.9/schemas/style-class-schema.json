@@ -1,0 +1,91 @@
+{
+  "title": "Schema for a named style",
+  "description": "This schema describes a single named style. Does not contain the name of the style itself, because that information is encoded as the name of the project resource",
+  "type": "object",
+  "properties": {
+    "pseudo": {
+      "description": "Specifies a css pseudo-class for this named style. Optional.",
+      "type": "string",
+      "enum": ["active", "checked", "default", "disabled", "empty", "enabled", "first-child", "fullscreen", "focus", "hover", "in-range", "invalid", "last-child", "link", "only-child", "out-of-range", "read-only", "read-write", "required", "valid", "visited"]
+    },
+    "animation": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "string",
+          "default": "2s",
+          "format": "cssTime",
+          "description": "Specifies the length of time that this animation should take to complete one cycle, see https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration"
+        },
+        "delay": {
+          "type": "string",
+          "default": "0s",
+          "format": "cssTime",
+          "description": "Specifies when this animation should start, see https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay"
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["normal", "reverse", "alternate", "alternate-reverse"],
+          "description": "Specifies whether this animation should play forwards, backwards, or alternating back and forth, see https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction"
+        },
+        "iterationCount": {
+          "oneOf": [
+            {
+              "type": "string",
+              "const": "infinite"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "default": "infinite",
+          "description": "Specifies the number of times this animation cycle should be played before stopping, see https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count"
+        },
+        "timingFunction": {
+          "type": "string",
+          "description": "Specifies how this animation should progress over the duration of each cycle."
+        },
+        "fillMode": {
+          "type": "string",
+          "enum": ["none", "forwards", "backwards", "both"],
+          "default": "both",
+          "description": "Specifies how this animation should apply styles to its target before and after its execution"
+        }
+      }
+    },
+    "declarations": {
+      "description": "Defines the CSS declarations for non-animated named styles",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "keyframes": {
+      "description": "Used to specify declarations when animation settings are present",
+      "type": "object",
+      "properties": {
+        "0%": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "100%": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "patternProperties": {
+        "\\d+%": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dependencies": {"animation": { "required": "keyframes" }}
+  }
+}

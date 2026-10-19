@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "paint": {
+      "type": ["string", "object"],
+      "format": "color"
+    },
+    "width": {
+      "type": ["string", "number"]
+    },
+    "opacity": {
+      "type": ["string", "number"]
+    },
+    "dashArray": {
+      "type": "string"
+    },
+    "dashoffset": {
+      "type": ["string", "number"]
+    },
+    "linecap": {
+      "type": "string",
+      "enum": [
+        "butt",
+        "round",
+        "square"
+      ]
+    },
+    "linejoin": {
+      "type": "string",
+      "enum": [
+        "arcs",
+        "bevel",
+        "miter",
+        "miter-clip",
+        "round"
+      ]
+    },
+    "miterlimit": {
+      "type": "number"
+    }
+  },
+  "additionalProperties": false
+}

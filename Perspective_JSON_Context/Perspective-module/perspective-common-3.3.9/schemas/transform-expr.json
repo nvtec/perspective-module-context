@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "expression": {
+      "type": "string",
+      "description": "The expression source code."
+    }
+  },
+  "required": [
+    "expression"
+  ],
+  "additionalProperties": false
+}

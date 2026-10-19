@@ -1,0 +1,64 @@
+{
+  "views": {
+    "only_view_in_town": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.label",
+            "props": {
+              "text": "hello from otherproj!",
+              "alt": "else"
+            },
+            "meta": {
+              "name": "just_a_label"
+            },
+            "position": {
+              "x": 150,
+              "y": 25
+            }
+          },
+          {
+            "version": 0,
+            "type": "ia.display.label",
+            "props": {
+              "text": "loading..."
+            },
+            "meta": {
+              "name": "another_label"
+            },
+            "position": {
+              "x": 150,
+              "y": 50
+            },
+            "bindings": [
+              {
+                "type": "tag",
+                "target": "text",
+                "config": {
+                  "tagPath": "[default]testnumtag"
+                },
+                "scope": "props"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "only_view_in_town",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

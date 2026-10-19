@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Trend Style Schema",
+  "type": "object",
+  "properties": {
+    "colorScheme": {
+      "type": "string",
+      "enum": [
+        "Spectral", "RdYlGn", "RdBu", "PiYG", "PRGn",
+        "RdYlBu", "BrBG", "RdGy", "PuOr", "Set2",
+        "Accent", "Set1", "Set3", "Dark2", "Paired",
+        "Pastel2", "Pastel1", "OrRd", "PuBu", "BuPu",
+        "Oranges", "BuGn", "YlOrBr", "YlGn", "Reds",
+        "RdPu", "Greens", "YlGnBu", "Purples", "GnBu",
+        "Greys", "YlOrRd", "PuRd", "Blues", "PuBuGn"
+      ],
+      "description": "Specifies a Color Brewer color scheme to use on the series (http://colorbrewer2.org/)."
+    },
+    "colors": {
+      "type": "array",
+      "description": "If provided, the colors listed here will override the colors used in the colorScheme.",
+      "items": {
+        "type": "string",
+        "format": "color"
+      }
+    },
+    "normal": {
+      "$ref": "#/definitions/styleConfig",
+      "description": "The style applied to the default state of the trend."
+    },
+    "highlighted": {
+      "$ref": "#/definitions/styleConfig",
+      "description": "The style applied to the highlighted state of the trend."
+    },
+    "selected": {
+      "$ref": "#/definitions/styleConfig",
+      "description": "The style applied to the selected state of the trend."
+    },
+    "muted": {
+      "$ref": "#/definitions/styleConfig",
+      "description": "The style applied to the muted (unselected) state of the trend."
+    }
+  },
+  "definitions": {
+    "styleConfig": {
+      "properties": {
+        "stroke": {
+          "type": "object",
+          "properties": {
+            "color": {
+              "type": "string",
+              "format": "color",
+              "description": "The color to apply to the line stroke, if applicable."
+            },
+            "width": {
+              "type": [ "number", "null" ],
+              "description": "The width to apply to the line stroke, if applicable."
+            },
+            "opacity": {
+              "type": [ "number", "null" ],
+              "description": "The opacity to apply to the line stroke, if applicable."
+            },
+            "dashArray": {
+              "type": [ "number", "null" ],
+              "description": "The spacing to apply between dashes of the line stroke, if applicable."
+            }
+          }
+        },
+        "fill": {
+          "type": "object",
+          "properties": {
+            "color": {
+              "type": "string",
+              "format": "color",
+              "description": "The color to apply to the trend fill, if applicable."
+            },
+            "opacity": {
+              "type": [ "number", "null" ],
+              "description": "The opacity to apply to the trend fill, if applicable."
+            }
+          }
+        }
+      }
+    }
+  }
+}

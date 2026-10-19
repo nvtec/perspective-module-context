@@ -1,0 +1,60 @@
+{
+    "name": "Result",
+    "methods": [
+        {
+            "name": "getAsSuccess",
+            "location": "Result",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "Result.Success",
+            "parameters": []
+        },
+        {
+            "name": "isError",
+            "location": "Result",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "bool",
+            "parameters": []
+        },
+        {
+            "name": "getAsError",
+            "location": "Result",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "Result.Error",
+            "parameters": []
+        },
+        {
+            "name": "isSuccess",
+            "location": "Result",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "bool",
+            "parameters": []
+        }
+    ],
+    "attributes": [
+        {
+            "name": "asError",
+            "location": "Result",
+            "kind": "INSTANCE_MEMBER",
+            "type": "Result.Error"
+        },
+        {
+            "name": "success",
+            "location": "Result",
+            "kind": "INSTANCE_MEMBER",
+            "type": "bool"
+        },
+        {
+            "name": "asSuccess",
+            "location": "Result",
+            "kind": "INSTANCE_MEMBER",
+            "type": "Result.Success"
+        },
+        {
+            "name": "error",
+            "location": "Result",
+            "kind": "INSTANCE_MEMBER",
+            "type": "bool"
+        }
+    ],
+    "items": []
+}

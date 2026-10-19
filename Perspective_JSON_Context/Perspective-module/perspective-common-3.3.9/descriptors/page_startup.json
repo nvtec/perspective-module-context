@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "description": "A reference to the newly created page. Note that only the pageId and path attributes will work during startup.",
+    "properties": {
+        "pageId": {
+            "type": "string",
+            "description": "Identifier associated with the target page"
+        },
+        "path": {
+            "type": "string",
+            "description": "Represents the Page URL of the page. Example: <code>/</code> or <code>/myPage</code>"
+        }
+    }
+}

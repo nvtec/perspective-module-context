@@ -1,0 +1,25 @@
+{
+    "name": "View",
+    "methods": [],
+    "attributes": [
+        {
+            "name": "props",
+            "location": "View",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        },
+        {
+            "name": "custom",
+            "location": "View",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        },
+        {
+            "name": "params",
+            "location": "View",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        }
+    ],
+    "items": []
+}

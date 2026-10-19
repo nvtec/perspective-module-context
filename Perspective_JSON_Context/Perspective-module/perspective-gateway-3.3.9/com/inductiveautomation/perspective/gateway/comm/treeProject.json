@@ -1,0 +1,41 @@
+{
+    "views": {
+        "tree": {
+            "root": {
+                "version": 0,
+                "type": "ia.container.coord",
+                "props": {
+                    "style": {}
+                },
+                "meta": {
+                    "name": "tree"
+                },
+                "children": [
+                    {
+                        "version": 0,
+                        "type": "ia-bp.input.tree",
+                        "props": {
+                            
+                        },
+                        "meta": {
+                            "name": "sampleTree"
+                        },
+                        "position": {
+                            "x": 0,
+                            "y": 0,
+                            "height": "400",
+                            "width": "180"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "mounts": {
+        "/": {
+            "view": "tree",
+            "docks": []
+        }
+    },
+    "docks": {}
+}

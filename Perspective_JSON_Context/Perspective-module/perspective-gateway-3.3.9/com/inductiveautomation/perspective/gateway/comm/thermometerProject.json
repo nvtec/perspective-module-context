@@ -1,0 +1,69 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.thermometer",
+            "props": {
+              "thermometerColor": "black",
+              "mercuryColor": "#939698",
+              "axisLabelColor": "black",
+              "strokeWidth": 3,
+              "highBound": 100,
+              "lowBound": 0,
+              "value": 25,
+              "unit": "C",
+              "valueFontColor": "white",
+              "valueFont": {
+                "fontSize": 25
+              },
+              "intervals": [
+                {
+                  "low": 0,
+                  "high": 25,
+                  "color": "#CF46E5"
+                },
+                {
+                  "low": 25,
+                  "high": 75,
+                  "color": "#E8D706"
+                },
+                {
+                  "low": 75,
+                  "high": 100,
+                  "color": "#E55946"
+                }
+              ]
+            },
+            "meta": {
+              "name": "therm"
+            },
+            "position": {
+              "x": 200,
+              "y": 200,
+              "width": "150px",
+              "height": "300px"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

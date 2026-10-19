@@ -1,0 +1,71 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.view",
+            "props": {
+              "path": "only-view"
+            },
+            "meta": {
+              "name": "view"
+            },
+            "position": {
+              "x": 200,
+              "y": 200,
+              "width": 200,
+              "height": 200
+            }
+          }
+        ]
+      }
+    },
+    "only-view": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {
+            "border": "1px dashed black"
+          }
+        },
+        "meta": {
+          "name": "container"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.label",
+            "props": {
+              "text": "IT'S A VIEW"
+            },
+            "meta": {
+              "name": "templateLabel"
+            },
+            "position": {
+              "x": 10,
+              "y": 10
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

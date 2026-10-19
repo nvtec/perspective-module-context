@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Icon Schema",
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "default": "",
+      "description": "Shorthand path to icon source, in format: library/iconName",
+      "format": "icon-path"
+    },
+    "library": {
+      "type": "string",
+      "description": "Optional alternative to 'path', name of library where icon is located. Must also supply 'name'."
+    },
+    "name": {
+      "type": "string",
+      "description": "Optional alternative to 'path', name of icon. Must also supply 'library'."
+    },
+    "color": {
+      "type": "string",
+      "format": "color",
+      "default": "",
+      "description": "Color of the icon. Here for convenience, may instead assign 'fill' in the styles prop."
+    },
+    "style": {
+      "$ref" : "urn:ignition-schema:schemas/style-properties.schema.json",
+      "default": {}
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "path"
+      ]
+    },
+    {
+      "required": [
+        "library",
+        "name"
+      ]
+    }
+  ],
+  "default": {
+    "path": "",
+    "color": "",
+    "style": {}
+  }
+}

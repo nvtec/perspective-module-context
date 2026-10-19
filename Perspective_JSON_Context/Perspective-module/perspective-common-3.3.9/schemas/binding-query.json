@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "queryPath": {
+      "type": "string",
+      "description": "Path to the named query this binding will execute"
+    },
+    "mode": {
+      "type": "string",
+      "description": "The path mode in which the query binding will operate. Two modes: Direct and Expression. See documentation for details.",
+      "enum": ["direct", "expression"],
+      "default": "direct"
+    },
+    "returnFormat": {
+      "type": "string",
+      "description": "The format to use for the results of the query execution",
+      "enum": ["auto", "json", "dataset", "scalar"],
+      "default": "auto"
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Parameter values to be passed to the query. Values are expressions.",
+      "default": {}
+    },
+    "polling": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "If true, the query will polled: that is, executed repeatedly at an interval. If false, the query will only run once on startup and again as parameter values change.",
+          "default": false
+        },
+        "rate": {
+          "type": ["number", "string"],
+          "description": "The rate at which the query will be executed. If numeric, this rate will be interpreted as the number of seconds between executions. If a string, the string will be interpreted as an expression whose result will be the poll rate. If the rate is not positive, polling will be disabled.",
+          "default": 5
+        }
+      },
+      "additionalProperties": false
+    },
+    "designerUseLimit": {
+      "type": "boolean",
+      "description": "If true, this query will use the query's limit settings when executed in the designer.",
+      "default": true
+    },
+    "bypassCache": {
+      "type": "boolean",
+      "description": "If true, this binding will bypass the query's cache built-in result cache.",
+      "default": false
+    }
+  },
+  "required": ["queryPath"],
+  "additionalProperties": false
+}

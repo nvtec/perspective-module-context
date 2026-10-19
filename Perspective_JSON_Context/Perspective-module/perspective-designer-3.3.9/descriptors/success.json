@@ -1,0 +1,23 @@
+{
+    "name": "Result.Success",
+    "methods": [
+        {
+            "name": "getContext",
+            "location": "Result.Success",
+            "description": "Details about the user who performed the successful authentication challenge.",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "WebAuthContext",
+            "parameters": []
+        }
+    ],
+    "attributes": [
+        {
+            "name": "context",
+            "location": "Result.Success",
+            "kind": "INSTANCE_MEMBER",
+            "description": "Details about the user who performed the successful authentication challenge.",
+            "type": "WebAuthContext"
+        }
+    ],
+    "items": []
+}

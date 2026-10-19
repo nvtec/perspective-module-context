@@ -1,0 +1,47 @@
+{
+    "name": "Page",
+    "methods": [
+        {
+            "name": "close",
+            "location": "Page",
+            "description": "Attempt to close this page",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "None",
+            "parameters": [
+                {
+                    "name": "message",
+                    "type": "str",
+                    "default": "None",
+                    "location": "close"
+                }
+            ]
+        }
+    ],
+    "attributes": [
+        {
+            "name": "id",
+            "location": "Page",
+            "kind": "INSTANCE_MEMBER",
+            "type": "str"
+        },
+        {
+            "name": "connected",
+            "location": "Page",
+            "kind": "INSTANCE_MEMBER",
+            "type": "bool"
+        },
+        {
+            "name": "views",
+            "location": "Page",
+            "kind": "INSTANCE_MEMBER",
+            "type": "list"
+        },
+        {
+            "name": "props",
+            "location": "Page",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        }
+    ],
+    "items": []
+}

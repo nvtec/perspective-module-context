@@ -1,0 +1,43 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.input.level-indicator",
+            "props": {
+              "percent": 42,
+              "strokeColor": "#2db7f5",
+              "style": {
+                "border": "dashed blue 2px"
+              }
+            },
+            "meta": {
+              "name": "testIndicator"
+            },
+            "position": {
+              "x": 100,
+              "y": 200
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "properties": {
+    "defaultSize": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "integer",
+          "default": 800
+        },
+        "height": {
+          "type": "integer",
+          "default": 800
+        }
+      }
+    },
+    "dropConfig": {
+      "type": "object",
+      "properties": {
+        "udts": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "default": "",
+                "format": "udt-path"
+              },
+              "param": {
+                "type": "string",
+                "default": ""
+              },
+              "action": {
+                "type": "string",
+                "default": "bind",
+                "enum": ["bind", "path"]
+              }
+            }
+          }
+        },
+        "dataTypes": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "default": "Int4",
+                "enum": [
+                  "Int1",
+                  "Int2",
+                  "Int4",
+                  "Int8",
+                  "Float4",
+                  "Float8",
+                  "Boolean",
+                  "String",
+                  "DateTime",
+                  "Text",
+                  "Int1Array",
+                  "Int2Array",
+                  "Int4Array",
+                  "Int8Array",
+                  "Float4Array",
+                  "Float8Array",
+                  "BooleanArray",
+                  "StringArray",
+                  "DateTimeArray",
+                  "ByteArray",
+                  "DataSet",
+                  "Document"
+                ]
+              },
+              "param": {
+                "type": "string",
+                "default": ""
+              },
+              "action": {
+                "type": "string",
+                "default": "bind",
+                "enum": ["bind", "path"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "loading": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "blocking",
+            "non-blocking"
+          ],
+          "default": "non-blocking",
+          "description": "If this view has a high number of children, non-blocking loading will indicate progress as components are loaded."
+        }
+      }
+    },
+    "inputBehavior" : {
+      "type": "string",
+      "enum": [
+        "merge",
+        "replace"
+      ],
+      "description": "Controls how input and in/out parameters are either merged with or replace their defaults",
+      "default": "replace"
+    }
+  }
+}

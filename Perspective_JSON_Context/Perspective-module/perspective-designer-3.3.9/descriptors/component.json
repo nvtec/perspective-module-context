@@ -1,0 +1,150 @@
+{
+    "name": "Component",
+    "methods": [
+        {
+            "name": "getChildren",
+            "location": "Component",
+            "description": "This component's children",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "list",
+            "parameters": []
+        },
+        {
+            "name": "getChild",
+            "location": "Component",
+            "description": "Get a child by name",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "Component",
+            "parameters": [
+                {
+                    "name": "name",
+                    "type": "str",
+                    "location": "getChild"
+                }
+            ]
+        },
+        {
+            "name": "getSibling",
+            "location": "Component",
+            "description": "Get a sibling component by name",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "Component",
+            "parameters": [
+                {
+                    "name": "name",
+                    "type": "str",
+                    "location": "getSibling"
+                }
+            ]
+        },
+        {
+            "name": "refreshBinding",
+            "location": "Component",
+            "description": "Refresh the binding at path",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "bool",
+            "parameters": [
+                {
+                    "name": "path",
+                    "type": "str",
+                    "location": "refreshBinding"
+                }
+            ]
+        },
+        {
+            "name": "focus",
+            "location": "Component",
+            "description": "Request that the browser focus on this component",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "None",
+            "parameters": []
+        },
+        {
+            "name": "requestPrint",
+            "location": "Component",
+            "description": "Starts a request to print the contents of this component.  Parameters are optional.",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "None",
+            "parameters": [
+                {
+                  "name": "target",
+                  "type": "str",
+                  "location": "requestPrint",
+                  "description": "Optional - Print target.  Accepted values are 'component', 'view', and 'page'.  Defaults to 'component'."
+                },
+                {
+                    "name": "documentTitle",
+                    "type": "str",
+                    "location": "requestPrint",
+                    "description": "Optional - Title of document when saving as PDF, for example."
+                }
+            ]
+        },
+        {
+            "name": "requestTooltip",
+            "location": "Component",
+            "description": "Show the tooltip for this component, if configured",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "None",
+            "parameters": []
+        },
+        {
+            "name": "removeTooltip",
+            "location": "Component",
+            "description": "Hide the tooltip for this component, if shown",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "None",
+            "parameters": []
+        },
+        {
+            "name": "requestContextMenu",
+            "location": "Component",
+            "description": "Show the context menu for this component, if configured",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "None",
+            "parameters": []
+        },
+        {
+            "name": "removeContextMenu",
+            "location": "Component",
+            "description": "Hide the context menu, if shown",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "None",
+            "parameters": []
+        }
+    ],
+    "attributes": [
+        {
+            "name": "children",
+            "location": "Component",
+            "description": "This component's children",
+            "kind": "INSTANCE_MEMBER",
+            "type": "list"
+        },
+        {
+            "name": "props",
+            "location": "Component",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        },
+        {
+            "name": "position",
+            "location": "Component",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        },
+        {
+            "name": "meta",
+            "location": "Component",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        },
+        {
+            "name": "custom",
+            "location": "Component",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        }
+    ],
+    "items": []
+}

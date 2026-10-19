@@ -1,0 +1,87 @@
+{
+    "name": "Session",
+    "methods": [
+        {
+            "name": "refreshBinding",
+            "location": "Session",
+            "description": "Refresh the binding at path",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "bool",
+            "parameters": [
+                {
+                    "name": "path",
+                    "type": "str",
+                    "location": "refreshBinding"
+                }
+            ]
+        },
+        {
+            "name": "getPage",
+            "location": "Session",
+            "description": "Retrieve a page by ID",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "Page",
+            "parameters": [
+                {
+                    "name": "id",
+                    "type": "str",
+                    "location": "getPage"
+                }
+            ]
+        },
+        {
+            "name": "close",
+            "location": "Session",
+            "description": "Attempt to close this session",
+            "kind": "INSTANCE_MEMBER",
+            "returnType": "None",
+            "parameters": [
+                {
+                    "name": "message",
+                    "type": "str",
+                    "default": "None",
+                    "location": "close"
+                }
+            ]
+        }
+    ],
+    "attributes": [
+        {
+            "name": "project",
+            "location": "Session",
+            "kind": "INSTANCE_MEMBER",
+            "type": "str"
+        },
+        {
+            "name": "projectInfo",
+            "location": "Session",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        },
+        {
+            "name": "info",
+            "location": "Session",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        },
+        {
+            "name": "pages",
+            "location": "Session",
+            "kind": "INSTANCE_MEMBER",
+            "type": "list"
+        },
+        {
+            "name": "props",
+            "location": "Session",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        },
+        {
+            "name": "custom",
+            "location": "Session",
+            "kind": "INSTANCE_MEMBER",
+            "type": "dict"
+        }
+    ],
+    "items": []
+}

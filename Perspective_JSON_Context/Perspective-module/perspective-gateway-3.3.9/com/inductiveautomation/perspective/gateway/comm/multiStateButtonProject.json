@@ -1,0 +1,86 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.input.multi-state-button",
+            "props": {
+              "orientation": "horizontal",
+              "controlValue": 0,
+              "activeStyle": {
+                "fontSize": "15px",
+                "border": "none",
+                "borderRadius": "2px",
+                "boxShadow": "1px 1px 2px #888888"
+              },
+              "inactiveStyle": {
+                "color": "white",
+                "fontSize": "15px",
+                "backgroundColor": "#3498DB",
+                "border": "none",
+                "borderRadius": "2px",
+                "boxShadow": "1px 1px 2px #888888"
+              },
+              "buttons": [
+                {
+                  "name": "Hand",
+                  "state": 2,
+                  "activeStyle": {
+                    "backgroundColor": "#FFF809"
+                  },
+                  "inactiveStyle": {}
+                },
+                {
+                  "name": "Off",
+                  "state": 0,
+                  "activeStyle": {
+                    "backgroundColor": "#FF2709"
+                  },
+                  "inactiveStyle": {}
+                },
+                {
+                  "name": "Test",
+                  "state": 4,
+                  "activeStyle": {},
+                  "inactiveStyle": {}
+                },
+                {
+                  "name": "Auto",
+                  "state": 1,
+                  "activeStyle": {
+                    "backgroundColor": "#62ED2A"
+                  },
+                  "inactiveStyle": {}
+                }
+              ]
+            },
+            "meta": {
+              "name": "HOAbuttons"
+            },
+            "position": {
+              "x": 200,
+              "y": 200
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

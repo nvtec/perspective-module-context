@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "description": "An object that contains info from the Key Event",
+    "properties": {
+        "altKey": {
+            "type": "boolean",
+            "description": "True if the Alt (Option or ⌥ on OS X) key was active when the key event was generated."
+        },
+        "code": {
+            "type": "string",
+            "description": "A string with the code value of the physical key represented by the event."
+        },
+        "ctrlKey": {
+            "type": "boolean",
+            "description": "True if the Ctrl key was active when the key event was generated."
+        },
+        "isComposing": {
+            "type": "boolean",
+            "description": "True if the event is fired after \"compositionstart\" and before \"compositionend\"."
+        },
+        "key": {
+            "type": "string",
+            "description": "A string representing the key value of the key represented by the event."
+        },
+        "location": {
+            "type": "integer",
+            "description": "A number representing the location of the key on the keyboard or other input device."
+        },
+        "matches": {
+            "type": "array",
+            "description": "A list of strings. The first item will be the entire string that matched the regular expression. Subsequent items will be the strings that matched the regular expression's capturing groups, if any."
+        },
+        "metaKey": {
+            "type": "boolean",
+            "description": "True if the Meta key (on Windows keyboards, the Windows key; on Mac keyboards, the Command key) was active when the key event was generated."
+        },
+        "repeat": {
+            "type": "boolean",
+            "description": "True if the key is being held down such that it is automatically repeating."
+        },
+        "shiftKey": {
+            "type": "boolean",
+            "description": "True if the Shift key was active when the key event was generated."
+        }
+    }
+}

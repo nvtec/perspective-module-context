@@ -1,0 +1,138 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "coordContainer"
+        },
+        "children": [
+          {
+            "type": "ia.container.tabbed-pane",
+            "meta": {
+              "name": "container"
+            },
+            "version": 0,
+            "position": {
+              "x": 200,
+              "y": 200,
+              "width": "350px",
+              "height": "300px"
+            },
+            "props": {
+              "menuStyle": "modern",
+              "tabs": [
+                {
+                  "id": "0",
+                  "text": "TAB 1"
+                },
+                {
+                  "id": "1",
+                  "text": "TAB 2"
+                },
+                {
+                  "id": "2",
+                  "text": "TAB 3"
+                }
+              ]
+            },
+            "children": [
+              {
+                "type": "ia.container.coord",
+                "meta": {
+                  "name": "container"
+                },
+                "version": 0,
+                "position": {},
+                "props": {
+                  "style": {}
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "version": 0,
+                    "meta": {
+                      "name": "bind_to_me"
+                    },
+                    "position": {
+                      "x": 100,
+                      "y": 50
+                    },
+                    "props": {
+                      "text": "page 1"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "container"
+                },
+                "version": 0,
+                "position": {},
+                "props": {
+                  "style": {}
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "version": 0,
+                    "meta": {
+                      "name": "bind_to_me"
+                    },
+                    "position": {
+                      "x": 50,
+                      "y": 50
+                    },
+                    "props": {
+                      "text": "page 2"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.coord",
+                "meta": {
+                  "name": "container"
+                },
+                "version": 0,
+                "position": {},
+                "props": {
+                  "style": {}
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "version": 0,
+                    "meta": {
+                      "name": "bind_to_me"
+                    },
+                    "position": {
+                      "x": 80,
+                      "y": 80
+                    },
+                    "props": {
+                      "text": "page 3"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

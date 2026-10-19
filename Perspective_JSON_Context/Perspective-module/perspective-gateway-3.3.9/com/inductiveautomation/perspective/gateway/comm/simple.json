@@ -1,0 +1,346 @@
+{
+  "views": {
+    "overview": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "root"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.view",
+            "props": {
+              "path": "sub-view",
+              "params": {
+                "param": "value from wrapper 1"
+              }
+            },
+            "meta": {
+              "name": "view-wrapper-1"
+            },
+            "position": {
+              "x": 10,
+              "y": 10,
+              "width": 200,
+              "height": 50
+            }
+          },
+          {
+            "version": 0,
+            "type": "ia.display.view",
+            "props": {
+              "path": "sub-view",
+              "params": {
+                "param": "starting..."
+              }
+            },
+            "meta": {
+              "name": "view-wrapper-2"
+            },
+            "position": {
+              "x": 10,
+              "y": 60,
+              "width": 200,
+              "height": 50
+            },
+            "bindings": [
+              {
+                "type": "expr",
+                "target": "params.param",
+                "scope": "props",
+                "config": {
+                  "source": "now(5000)"
+                }
+              }
+            ]
+          },
+          {
+            "version": 0,
+            "type": "ia.input.text-field",
+            "props": {
+              "text": "hello world"
+            },
+            "meta": {
+              "name": "tf_for_input"
+            },
+            "position": {
+              "x": 210,
+              "y": 10,
+              "width": 200,
+              "height": 30
+            }
+          },
+          {
+            "version": 0,
+            "type": "ia.display.view",
+            "props": {
+              "path": "tf-view",
+              "params": {
+                "inText": "..."
+              }
+            },
+            "bindings": [
+              {
+                "type": "property",
+                "target": "params.inText",
+                "scope": "props",
+                "config": {
+                  "source": "../tf_for_input.props.text"
+                }
+              }
+            ],
+            "meta": {
+              "name": "view_wrapper_3"
+            },
+            "position": {
+              "x": 210,
+              "y": 45,
+              "width": 200,
+              "height": 30
+            }
+          },
+          {
+            "version": 0,
+            "type": "ia.display.label",
+            "props": {
+              "text": "loading..."
+            },
+            "meta": {
+              "name": "label"
+            },
+            "position": {
+              "x": 210,
+              "y": 80,
+              "width": 200,
+              "height": 30
+            },
+            "bindings": [
+              {
+                "type": "property",
+                "target": "text",
+                "scope": "props",
+                "config": {
+                  "source": "../view_wrapper_3.props.params.outText"
+                }
+              }
+            ]
+          },
+          {
+            "version": 0,
+            "type": "ia.display.view",
+            "props": {
+              "path": "tf-inout-view",
+              "params": {
+                "ptext": "..."
+              }
+            },
+            "meta": {
+              "name": "view_wrapper_4"
+            },
+            "position": {
+              "x": 410,
+              "y": 10,
+              "width": 200,
+              "height": 30
+            },
+            "bindings": [
+              {
+                "type": "property",
+                "target": "params.ptext",
+                "scope": "props",
+                "config": {
+                  "source": "../tf_for_input2.props.text",
+                  "bidirectional": true
+                }
+              }
+            ]
+          },
+          {
+            "version": 0,
+            "type": "ia.input.text-field",
+            "props": {
+              "text": "hello world"
+            },
+            "meta": {
+              "name": "tf_for_input2"
+            },
+            "position": {
+              "x": 410,
+              "y": 45,
+              "width": 200,
+              "height": 30
+            }
+          }
+        ]
+      }
+    },
+    "sub-view": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "root"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.display.label",
+            "props": {
+              "text": "----shouldn't see this text----"
+            },
+            "meta": {
+              "name": "label"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "bindings": [
+              {
+                "type": "expr",
+                "target": "text",
+                "config": {
+                  "source": "{view.params.param} + ' -- label'"
+                },
+                "scope": "props"
+              }
+            ]
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "param",
+          "value": "[default param value]",
+          "type": "input",
+          "doc": "This is words that will help you"
+        }
+      ]
+    },
+    "tf-view": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {
+            "border": "1px solid black"
+          }
+        },
+        "meta": {
+          "name": "root"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.input.text-field",
+            "props": {
+              "text": ""
+            },
+            "meta": {
+              "name": "tf"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "bindings": [
+              {
+                "type": "property",
+                "scope": "props",
+                "target": "text",
+                "config": {
+                  "source": "view.params.inText"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "inText",
+          "value": "",
+          "type": "input"
+        },
+        {
+          "name": "outText",
+          "value": "default!",
+          "type": "output"
+        }
+      ],
+      "bindings": [
+        {
+          "type": "expr",
+          "scope": "params",
+          "target": "outText",
+          "config": {
+            "source": "upper({/root/tf.props.text})"
+          }
+        }
+      ]
+    },
+    "tf-inout-view": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {
+            "border": "1px solid black"
+          }
+        },
+        "meta": {
+          "name": "root"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.input.text-field",
+            "props": {
+              "text": ""
+            },
+            "meta": {
+              "name": "tf"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "bindings": [
+              {
+                "type": "property",
+                "scope": "props",
+                "target": "text",
+                "config": {
+                  "source": "view.params.ptext",
+                  "bidirectional": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "ptext",
+          "value": "",
+          "type": "inout"
+        }
+      ]
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "overview",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

@@ -1,0 +1,80 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.input.range-calendar",
+            "props": {
+              "disabledTime": {
+                "start": {
+                  "offHoursByDay": [
+                    {
+                      "day": 0,
+                      "offHours": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        22,
+                        23
+                      ]
+                    }
+                  ],
+                  "offHoursByDate": [
+                    {
+                      "date": 1,
+                      "offHours": [
+                        22,
+                        23
+                      ]
+                    }
+                  ]
+                },
+                "end": {
+                  "offHoursByDay": [],
+                  "offHoursByDate": [
+                    {
+                      "date": 1,
+                      "offHours": [
+                        22,
+                        23
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "meta": {
+              "name": "calendar1"
+            },
+            "position": {
+              "x": 200,
+              "y": 200,
+              "width": 250,
+              "height": 250
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

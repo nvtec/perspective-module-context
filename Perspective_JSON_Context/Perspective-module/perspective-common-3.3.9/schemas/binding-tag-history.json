@@ -1,0 +1,268 @@
+{
+  "definitions": {
+    "aggregate": {
+      "type": "string",
+      "description": "Dictates how multiple history values are \"aggregated\" together in order to form a result for a given time slice.",
+      "default": "Average",
+      "suggestions": [
+        "Average",
+        "MinMax",
+        "LastValue",
+        "SimpleAverage",
+        "Sum",
+        "Minimum",
+        "Maximum",
+        "DurationOn",
+        "DurationOff",
+        "CountOn",
+        "CountOff",
+        "Count",
+        "Range",
+        "Variance",
+        "StdDev",
+        "PctGood",
+        "PctBad"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "dateRange": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "startDate": {
+              "type": [
+                "number",
+                "string"
+              ],
+              "description": "A start date expression"
+            },
+            "endDate": {
+              "type": [
+                "number",
+                "string"
+              ],
+              "description": "An end date expression"
+            }
+          },
+          "required": [
+            "startDate",
+            "endDate"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "mostRecent": {
+              "type": [
+                "number",
+                "string"
+              ],
+              "description": "An expression which emits the most recent real-time data to pull in milliseconds"
+            },
+            "mostRecentUnits": {
+              "type": "string",
+              "enum": [
+                "sec",
+                "min",
+                "hour",
+                "day",
+                "week",
+                "month"
+              ]
+            }
+          },
+          "required": [
+            "mostRecent",
+            "mostRecentUnits"
+          ]
+        }
+      ]
+    },
+    "tags": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "default": ""
+              },
+              "alias": {
+                "type": "string",
+                "default": ""
+              },
+              "aggregate": {
+                "type": "string",
+                "default": ""
+              }
+            },
+            "default": {
+              "path": ""
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        {
+          "type": "string",
+          "default": ""
+        }
+      ]
+    },
+    "returnFormat": {
+      "type": "string",
+      "enum": [
+        "wide",
+        "tall",
+        "calculations"
+      ],
+      "default": "wide"
+    },
+    "returnSize": {
+      "type": "object",
+      "anyOf": [
+        {
+          "properties": {
+            "type": {
+              "type": "string",
+              "constant": "raw"
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "type": "string",
+              "constant": "natural"
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "type": "string",
+              "constant": "fixed"
+            },
+            "numRows": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "numRows"
+          ]
+        },
+        {
+          "properties": {
+            "type": {
+              "type": "string",
+              "constant": "interval"
+            },
+            "delay": {
+              "type": "integer"
+            },
+            "delayUnits": {
+              "type": "string",
+              "enum": [
+                "sec",
+                "min",
+                "hour"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "delay",
+            "delayUnits"
+          ]
+        }
+      ],
+      "default": {
+        "type": "raw"
+      }
+    },
+    "polling": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "If true, the query will polled: that is, executed repeatedly at an interval. If false, the query will only run once on startup and again as parameter values change.",
+          "default": false
+        },
+        "rate": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": "The rate at which the query will be executed. If numeric, this rate will be interpreted as the number of seconds between executions. If a string, the string will be interpreted as an expression whose result will be the poll rate. If the rate is not positive, polling will be disabled.",
+          "default": 5
+        }
+      },
+      "required": [
+        "enabled",
+        "rate"
+      ],
+      "default": {
+        "enabled": false,
+        "rate": 5
+      }
+    },
+    "aggregate": {
+      "$ref": "#/definitions/aggregate",
+      "description": "Default aggregation mode used by a column in case the column does not override it"
+    },
+    "valueFormat": {
+      "type": "string",
+      "enum": [
+        "dataset",
+        "document"
+      ],
+      "default": "dataset"
+    },
+    "ignoreBadQuality": {
+      "type": "boolean",
+      "default": false
+    },
+    "preventInterpolation": {
+      "type": "boolean",
+      "default": false
+    },
+    "avoidScanClassValidation": {
+      "type": "boolean",
+      "default": false
+    },
+    "calculations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/aggregate"
+      }
+    }
+  },
+  "required": [
+    "dateRange",
+    "tags"
+  ],
+  "default": {
+    "tags": [
+      {
+        "path": ""
+      }
+    ],
+    "dateRange": {
+      "mostRecent": "10",
+      "mostRecentUnits": "min"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "secondContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.input.dropdown",
+            "props": {
+              "selectOptions": [
+                {
+                  "value": "Hotdogs",
+                  "label": "Hotdogs",
+                  "disabled": false
+                },
+                {
+                  "value": "Tacos",
+                  "label": "Tacos"
+                },
+                {
+                  "value": "Kittens",
+                  "label": "Kittens"
+                }
+              ]
+            },
+            "meta": {
+              "name": "dropdown"
+            },
+            "position": {
+              "x": 200,
+              "y": 200,
+              "width": "350px",
+              "height": "50px"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

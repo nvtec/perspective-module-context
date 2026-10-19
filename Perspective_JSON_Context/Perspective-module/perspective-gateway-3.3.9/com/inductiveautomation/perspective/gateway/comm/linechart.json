@@ -1,0 +1,39 @@
+{
+    "views": {
+        "linechartView": {
+            "root": {
+                "version": 0,
+                "type": "ia.container.coord",
+                "props": {
+                    "style": {}
+                },
+                "meta": {
+                    "name": "linechartCoordContainer"
+                },
+                "children": [
+                    {
+                        "version": 0,
+                        "type": "ia.charts.line",
+                        "props": {
+
+                        },
+                        "meta": {
+                            "name": "linechartExample"
+                        },
+                        "position": {
+                            "x": 100,
+                            "y": 100
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "mounts": {
+        "/": {
+            "view": "linechartView",
+            "docks": []
+        }
+    },
+    "docks": {}
+}

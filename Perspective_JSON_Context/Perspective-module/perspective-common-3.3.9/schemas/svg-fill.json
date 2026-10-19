@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "paint": {
+      "type": ["string", "object"],
+      "format": "color"
+    },
+    "opacity": {
+      "type": ["string", "number"]
+    },
+    "rule": {
+      "type": "string",
+      "enum": [
+        "nonzero",
+        "evenodd"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

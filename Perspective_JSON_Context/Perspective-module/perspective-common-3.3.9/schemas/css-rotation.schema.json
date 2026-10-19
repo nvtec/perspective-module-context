@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Perspective CSS Rotation Properties",
+  "type": "object",
+  "properties": {
+    "anchor": {
+      "description": "The point around which the rotation happens.  Either as an {x:number, y:number} object where x and y represent percentages such that {x: 0, y: 0} represents the (0%, 0%) or top-left corner of the component, or as a valid css transform-origin string.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "type": "string",
+          "description": "A valid css transform-origin property string value."
+        }
+      ]
+    },
+    "angle": {
+      "description": "How much to rotate the component.  Valid values include numbers (as degrees), and valid CSS angle strings such as '45deg', '2rad', '0.5turn', etc.",
+      "oneOf": [
+        {
+          "type": "number",
+          "description": "Degrees of rotation around the anchor point."
+        },
+        {
+          "type": "string",
+          "pattern": "^-?([0-9]+)(\\.[0-9]+)?(deg|rad|grad|turn)$",
+          "description": "A valid css angle string value"
+        }
+      ]
+    }
+  }
+}

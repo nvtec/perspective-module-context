@@ -1,0 +1,88 @@
+{
+  "views": {
+    "example": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.coord",
+        "props": {
+          "style": {}
+        },
+        "meta": {
+          "name": "coordContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.container.flex",
+            "props": {
+              "style": {
+                "alignItems": "stretch",
+                "border": "solid #89F 1px"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "x": 200,
+              "y": 200,
+              "width": "600px",
+              "height": "100px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "version": 0,
+                "meta": {
+                  "name": "label"
+                },
+                "position": {},
+                "props": {
+                  "text": "flex-child",
+                  "style": {
+                    "border": "dotted 1px #777"
+                  }
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "version": 0,
+                "meta": {
+                  "name": "label"
+                },
+                "position": {},
+                "props": {
+                  "text": "flex-child",
+                  "style": {
+                    "border": "dotted 1px #777"
+                  }
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "version": 0,
+                "meta": {
+                  "name": "label"
+                },
+                "position": {},
+                "props": {
+                  "text": "flex-child",
+                  "style": {
+                    "border": "dotted 1px #777"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "example",
+      "docks": []
+    }
+  },
+  "docks": {}
+}

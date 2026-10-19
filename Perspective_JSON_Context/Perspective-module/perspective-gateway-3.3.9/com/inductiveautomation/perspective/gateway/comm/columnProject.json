@@ -1,0 +1,323 @@
+{
+  "views": {
+    "column-view": {
+      "root": {
+        "version": 0,
+        "type": "ia.container.column",
+        "props": {
+          "columns": 12,
+          "rows": 3,
+          "breakpoints": [
+            {"name": "xs", "minWidth": 0},
+            {"name": "sm", "minWidth": 480},
+            {"name": "md", "minWidth": 768},
+            {"name": "lg", "minWidth": 996},
+            {"name": "xl", "minWidth": 1200}
+          ],
+          "gutters": {
+            "vertical": 10,
+            "horizontal": 10
+          },
+          "style": {
+            "margin": "1rem"
+          }
+        },
+        "meta": {
+          "name": "columnContainer"
+        },
+        "children": [
+          {
+            "version": 0,
+            "type": "ia.container.coord",
+            "props": {
+              "style": {
+                "border": "1px solid blue",
+                "borderRadius": "4px",
+                "backgroundColor": "rgba(0, 0, 255, 0.1)"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "row": 0,
+              "height": "8rem",
+              "columns": [
+                {"breakpoint": "xs", "span": 12, "offset": 0, "order": 1},
+                {"breakpoint": "sm", "span": 6, "offset": 0, "order": 2},
+                {"breakpoint": "lg", "span": 4, "offset": 0, "order": 3}
+              ]
+            },
+            "children": []
+          },
+          {
+            "version": 0,
+            "type": "ia.container.coord",
+            "props": {
+              "style": {
+                "border": "1px solid red",
+                "borderRadius": "4px",
+                "backgroundColor": "rgba(255, 0, 0, 0.1)"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "row": 0,
+              "height": "6rem",
+              "columns": [
+                {"breakpoint": "xs", "span": 12, "offset": 0, "order": 1},
+                {"breakpoint": "sm", "span": 6, "offset": 0, "order": 2},
+                {"breakpoint": "lg", "span": 4, "offset": 0, "order": 3}
+              ]
+            },
+            "children": []
+          },
+          {
+            "version": 0,
+            "type": "ia.container.coord",
+            "props": {
+              "style": {
+                "border": "1px solid green",
+                "borderRadius": "4px",
+                "backgroundColor": "rgba(0, 255, 0, 0.1)"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "row": 0,
+              "height": "6rem",
+              "columns": [
+                {"breakpoint": "xs", "span": 12, "offset": 0, "order": 1},
+                {"breakpoint": "sm", "span": 6, "offset": 0, "order": 2},
+                {"breakpoint": "lg", "span": 4, "offset": 0, "order": 3}
+              ]
+            },
+            "children": []
+          },
+          {
+            "version": 0,
+            "type": "ia.container.coord",
+            "props": {
+              "style": {
+                "border": "1px solid blue",
+                "borderRadius": "4px",
+                "backgroundColor": "rgba(0, 0, 255, 0.1)"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "row": 1,
+              "height": "4rem",
+              "columns": [
+                {"breakpoint": "xs", "span": 12, "offset": 0, "order": 1},
+                {"breakpoint": "sm", "span": 6, "offset": 0, "order": 2},
+                {"breakpoint": "lg", "span": 4, "offset": 0, "order": 3}
+              ]
+            },
+            "children": []
+          },
+          {
+            "version": 0,
+            "type": "ia.container.coord",
+            "props": {
+              "style": {
+                "border": "1px solid red",
+                "borderRadius": "4px",
+                "backgroundColor": "rgba(255, 0, 0, 0.1)"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "row": 1,
+              "height": "4rem",
+              "columns": [
+                {"breakpoint": "xs", "span": 6, "offset": 6, "order": 1},
+                {"breakpoint": "sm", "span": 4, "offset": 2, "order": 2},
+                {"breakpoint": "lg", "span": 4, "offset": 1, "order": 3}
+              ]
+            },
+            "children": [
+              {
+                "version": 0,
+                "type": "ia.display.label",
+                "props": {
+                  "text": "I have an offset"
+                },
+                "meta": {
+                  "name": "offset"
+                },
+                "position": {
+                  "x": 10,
+                  "y": 10,
+                  "width": "100px"
+                }
+              }
+            ]
+          },
+          {
+            "version": 0,
+            "type": "ia.container.coord",
+            "props": {
+              "style": {
+                "border": "1px solid green",
+                "borderRadius": "4px",
+                "backgroundColor": "rgba(0, 255, 0, 0.1)"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "row": 1,
+              "height": "4rem",
+              "columns": [
+                {"breakpoint": "xs", "span": 12, "offset": 0, "order": 1},
+                {"breakpoint": "sm", "span": 6, "offset": 0, "order": 2},
+                {"breakpoint": "lg", "span": 3, "offset": 0, "order": 3}
+              ]
+            },
+            "children": []
+          },
+          {
+            "version": 0,
+            "type": "ia.container.coord",
+            "props": {
+              "style": {
+                "border": "1px solid blue",
+                "borderRadius": "4px",
+                "backgroundColor": "rgba(0, 0, 255, 0.1)"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "row": 2,
+              "height": "4rem",
+              "columns": [
+                {"breakpoint": "xs", "span": 12, "offset": 0, "order": 3},
+                {"breakpoint": "sm", "span": 2, "offset": 2, "order": 3},
+                {"breakpoint": "md", "span": 2, "offset": 2, "order": 2},
+                {"breakpoint": "lg", "span": 2, "offset": 0, "order": 1}
+              ]
+            },
+            "children": [
+              {
+                "version": 0,
+                "type": "ia.display.label",
+                "props": {
+                  "text": "child 1"
+                },
+                "meta": {
+                  "name": "order"
+                },
+                "position": {
+                  "x": 10,
+                  "y": 10,
+                  "width": "50px"
+                }
+              }
+            ]
+          },
+          {
+            "version": 0,
+            "type": "ia.container.coord",
+            "props": {
+              "style": {
+                "border": "1px solid red",
+                "borderRadius": "4px",
+                "backgroundColor": "rgba(255, 0, 0, 0.1)"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "row": 2,
+              "height": "3rem",
+              "columns": [
+                {"breakpoint": "xs", "span": 12, "offset": 0, "order": 2},
+                {"breakpoint": "sm", "span": 2, "offset": 0, "order": 1},
+                {"breakpoint": "md", "span": 2, "offset": 2, "order": 3},
+                {"breakpoint": "lg", "span": 2, "offset": 2, "order": 2}
+              ]
+            },
+            "children": [
+              {
+                "version": 0,
+                "type": "ia.display.label",
+                "props": {
+                  "text": "child 2"
+                },
+                "meta": {
+                  "name": "order"
+                },
+                "position": {
+                  "x": 10,
+                  "y": 10,
+                  "width": "50px"
+                }
+              }
+            ]
+          },
+          {
+            "version": 0,
+            "type": "ia.container.coord",
+            "props": {
+              "style": {
+                "border": "1px solid green",
+                "borderRadius": "4px",
+                "backgroundColor": "rgba(0, 255, 0, 0.1)"
+              }
+            },
+            "meta": {
+              "name": "container"
+            },
+            "position": {
+              "row": 2,
+              "height": "2rem",
+              "columns": [
+                {"breakpoint": "xs", "span": 12, "offset": 0, "order": 1},
+                {"breakpoint": "sm", "span": 2, "offset": 2, "order": 2},
+                {"breakpoint": "md", "span": 2, "offset": 0, "order": 1},
+                {"breakpoint": "lg", "span": 2, "offset": 2, "order": 3}
+              ]
+            },
+            "children": [
+              {
+                "version": 0,
+                "type": "ia.display.label",
+                "props": {
+                  "text": "child 3"
+                },
+                "meta": {
+                  "name": "order"
+                },
+                "position": {
+                  "x": 10,
+                  "y": 10,
+                  "width": "50px"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "mounts": {
+    "/": {
+      "view": "column-view",
+      "docks": []
+    }
+  },
+  "docks": {}
+}
