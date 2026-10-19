@@ -25,7 +25,13 @@ Inspect files in this repository before generating or altering any resource:
   * Material/Vector Icon paths: perspective-designer-3.3.9/images/perspective-vector-icons.json  
   * Supported DOM events: perspective-designer-3.3.9/dom\_events.json  
 > * **Golden Reference Examples**:  
-  * Working view implementations: perspective-gateway-3.3.9/com/inductiveautomation/perspective/gateway/comm/\*.json
+  * Working view implementations: perspective-gateway-3.3.9/com/inductiveautomation/perspective/gateway/comm/\*.json  
+> * **Scripting & Gateway Rules**:  
+  * Jython 2.7 execution, system.perspective.\* API, and tag I/O: SCRIPTS.md  
+> * **Project Filesystem & Manifests**:  
+  * On-disk folder hierarchy and resource.json manifests: PROJECT\_STRUCTURE.md  
+> * **Automated Validation**:  
+  * Schema & position contract verification script: validate\_view.py
 
 ## ---
 
@@ -43,35 +49,41 @@ Inspect files in this repository before generating or altering any resource:
 The position block of every child component is dictated strictly by the type of its immediate **PARENT** container. Never mix positioning models:
 
 > 1. **Parent is Flex Container (ia.container.flex)**:  
->    `"position": {`  
->      `"basis": "auto",`  
->      `"grow": 0,`  
->      `"shrink": 1`  
->    `}`
+>    "position": {  
+>      "basis": "auto",  
+>      "grow": 0,  
+>      "shrink": 1  
+>    }
 
 > 2. **Parent is Coordinate Container (ia.container.coord)**:  
->    `"position": {`  
->      `"x": 0,`  
->      `"y": 0,`  
->      `"width": 100,`  
->      `"height": 50`  
->    `}`
+>    "position": {  
+>      "x": 0,  
+>      "y": 0,  
+>      "width": 100,  
+>      "height": 50  
+>    }
 
 > 3. **Parent is Column Container (ia.container.column)**:  
->    `"position": {`  
->      `"column": 1,`  
->      `"span": 6`  
->    `}`
+>    "position": {  
+>      "column": 1,  
+>      "span": 6  
+>    }
 
 > 4. **Parent is Breakpoint Container (ia.container.breakpt)**:  
->    `"position": {`  
->      `"size": "small"`  
->    `}`
+>    "position": {  
+>      "size": "small"  
+>    }
 
 ### **Rule C: Design Tokens Over Hardcoded Hex Values**
 
 > * Never use hardcoded colors in props.style or style classes (e.g., avoid \#1E88E5).  
 > * Reference Ignition CSS theme variables: "var(--call-to-action)", "var(--neutral-20)", "var(--error)". See THEMES.md.
+
+### **Rule D: Gateway Jython Scripting Standard**
+
+> * When writing script transforms, change scripts, or action handlers, adhere strictly to SCRIPTS.md.  
+> * Never use Vision APIs (system.gui.\*, system.nav.\*) or browser DOM globals.  
+> * For tag operations, use system.tag.readBlocking and system.tag.writeBlocking.
 
 ## ---
 
@@ -81,64 +93,74 @@ When asked to generate a full view.json, select the appropriate envelope:
 
 ### **Standard Flex Root (Default for dashboards, forms, responsive screens)**
 
-`{`  
-  `"custom": {},`  
-  `"params": {},`  
-  `"props": {},`  
-  `"root": {`  
-    `"type": "ia.container.flex",`  
-    `"meta": { "name": "root" },`  
-    `"props": {`  
-      `"direction": "column",`  
-      `"justify": "flex-start",`  
-      `"alignItems": "stretch"`  
-    `},`  
-    `"children": []`  
-  `}`  
-`}`
+{  
+  "custom": {},  
+  "params": {},  
+  "props": {},  
+  "root": {  
+    "type": "ia.container.flex",  
+    "meta": { "name": "root" },  
+    "props": {  
+      "direction": "column",  
+      "justify": "flex-start",  
+      "alignItems": "stretch"  
+    },  
+    "children": \[\]  
+  }  
+}
 
 ### **Coordinate Root (P\&ID mimics, fixed spatial layouts)**
 
-`{`  
-  `"custom": {},`  
-  `"params": {},`  
-  `"props": {},`  
-  `"root": {`  
-    `"type": "ia.container.coord",`  
-    `"meta": { "name": "root" },`  
-    `"props": {`  
-      `"mode": "percent"`  
-    `},`  
-    `"children": []`  
-  `}`  
-`}`
+{  
+  "custom": {},  
+  "params": {},  
+  "props": {},  
+  "root": {  
+    "type": "ia.container.coord",  
+    "meta": { "name": "root" },  
+    "props": {  
+      "mode": "percent"  
+    },  
+    "children": \[\]  
+  }  
+}
 
 ## ---
 
 **4\. Bindings & Transforms Pattern (propConfig)**
 
 Dynamic behavior is configured in the component's propConfig object using schema-compliant paths:  
-`{`  
-  `"type": "ia.display.label",`  
-  `"meta": { "name": "PressureReadout" },`  
-  `"position": { "basis": "32px", "grow": 0, "shrink": 0 },`  
-  `"props": { "text": "0.0 PSI" },`  
-  `"propConfig": {`  
-    `"props.text": {`  
-      `"binding": {`  
-        `"type": "tag",`  
-        `"config": {`  
-          `"mode": "direct",`  
-          `"tagPath": "{view.params.tagPath}/Pressure",`  
-          `"fallbackDelay": 2.5`  
-        `},`  
-        `"transforms": [`  
-          `{`  
-            `"type": "format",`  
-            `"format": "0.0 'PSI'"`  
-          `}`  
-        `]`  
-      `}`  
-    `}`  
-  `}`  
-`}`  
+{  
+  "type": "ia.display.label",  
+  "meta": { "name": "PressureReadout" },  
+  "position": { "basis": "32px", "grow": 0, "shrink": 0 },  
+  "props": { "text": "0.0 PSI" },  
+  "propConfig": {  
+    "props.text": {  
+      "binding": {  
+        "type": "tag",  
+        "config": {  
+          "mode": "direct",  
+          "tagPath": "{view.params.tagPath}/Pressure",  
+          "fallbackDelay": 2.5  
+        },  
+        "transforms": \[  
+          {  
+            "type": "format",  
+            "format": "0.0 'PSI'"  
+          }  
+        \]  
+      }  
+    }  
+  }  
+}
+
+## ---
+
+**5\. View Validation Workflow**
+
+When operating in an environment with terminal or execution access:
+
+> 1. After generating or updating any view.json, run:  
+>    python validate\_view.py \<path\_to\_view.json\>  
+> 2. If validate\_view.py reports any envelope missing keys or container position mismatches, correct the JSON before finalizing your output.
