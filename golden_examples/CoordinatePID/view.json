@@ -1,0 +1,57 @@
+{
+  "custom": {},
+  "params": {
+    "PumpID": 1
+  },
+  "props": {
+    "defaultSize": {
+      "width": 800,
+      "height": 600
+    }
+  },
+  "root": {
+    "type": "ia.container.coord",
+    "meta": { "name": "root" },
+    "props": {
+      "mode": "fixed",
+      "style": {
+        "backgroundColor": "var(--container-background)"
+      }
+    },
+    "children": [
+      {
+        "type": "ia.symbol.pump",
+        "meta": { "name": "MainPump" },
+        "position": {
+          "x": 100,
+          "y": 100,
+          "width": 80,
+          "height": 80
+        },
+        "propConfig": {
+          "props.state": {
+            "binding": {
+              "type": "tag",
+              "config": {
+                "tagPath": "[default]Pumps/Pump_{view.params.PumpID}/State"
+              },
+              "transforms": [
+                {
+                  "type": "map",
+                  "inputType": "value",
+                  "outputType": "value",
+                  "mappings": [
+                    { "input": 0, "output": "stopped" },
+                    { "input": 1, "output": "running" },
+                    { "input": 2, "output": "faulted" }
+                  ],
+                  "fallback": "stopped"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -25,7 +25,7 @@ Inspect files in this repository before generating or altering any resource:
   * Material/Vector Icon paths: perspective-designer-3.3.9/images/perspective-vector-icons.json  
   * Supported DOM events: perspective-designer-3.3.9/dom\_events.json  
 > * **Golden Reference Examples**:  
-  * Working view implementations: perspective-gateway-3.3.9/com/inductiveautomation/perspective/gateway/comm/\*.json  
+  * Working view implementations: golden_examples/*/view.json  
 > * **Scripting & Gateway Rules**:  
   * Jython 2.7 execution, system.perspective.\* API, and tag I/O: SCRIPTS.md  
 > * **Project Filesystem & Manifests**:  
@@ -157,7 +157,33 @@ Dynamic behavior is configured in the component's propConfig object using schema
 
 ## ---
 
-**5\. View Validation Workflow**
+
+## ---
+
+**5\. Events & Actions (events Object)**
+
+Component events and scripts are configured under the `events` object on the component. Use the `dom` or `custom` event keys.
+{  
+  "type": "ia.input.button",  
+  "meta": { "name": "SubmitButton" },  
+  "position": { "basis": "32px" },  
+  "events": {  
+    "dom": {  
+      "onClick": {  
+        "type": "script",  
+        "scope": "G",  
+        "config": {  
+          "script": "\tsystem.perspective.print(\"Clicked!\")"  
+        }  
+      }  
+    }  
+  }  
+}
+
+## ---
+
+**6\. View Validation Workflow**
+
 
 When operating in an environment with terminal or execution access:
 

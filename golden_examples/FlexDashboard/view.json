@@ -1,0 +1,48 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "type": "ia.container.flex",
+    "meta": { "name": "root" },
+    "props": {
+      "direction": "column",
+      "justify": "flex-start",
+      "alignItems": "stretch"
+    },
+    "children": [
+      {
+        "type": "ia.display.label",
+        "meta": { "name": "HeaderLabel" },
+        "props": {
+          "text": "Plant Dashboard",
+          "style": {
+            "classes": "HeaderStyle",
+            "color": "var(--neutral-90)",
+            "backgroundColor": "var(--surface-secondary)"
+          }
+        },
+        "position": {
+          "basis": "50px",
+          "grow": 0,
+          "shrink": 0
+        }
+      },
+      {
+        "type": "ia.display.table",
+        "meta": { "name": "DataGrid" },
+        "props": {
+          "data": [
+            { "machine": "Pump 1", "status": "Running" },
+            { "machine": "Pump 2", "status": "Stopped" }
+          ]
+        },
+        "position": {
+          "basis": "300px",
+          "grow": 1,
+          "shrink": 1
+        }
+      }
+    ]
+  }
+}
